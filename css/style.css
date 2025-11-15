@@ -1,0 +1,324 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Yanone Kaffeesatz', 'Oswald', 'Alumni Sans', sans-serif;
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* Header */
+.header-area {
+  background: #f9943f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.classy-navbar {
+  padding: 15px 0; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 50px; 
+}
+
+.nav-brand img {
+  width: 75px;
+}
+
+/* Căn chỉnh Nav Items */
+.classy-menu {
+  flex-grow: 1; 
+  margin-top: 10px;
+}
+
+.classynav {
+  text-align: center;
+}
+
+.classynav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.classynav ul li {
+  display: inline-block; 
+}
+
+.classynav ul li a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400; 
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  margin: 0 15px;
+}
+
+.classynav ul li a:hover {
+  color: #212529; 
+}
+
+/* Intro */
+.intro {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  position: relative;
+}
+
+.intro__sub-title {
+  font-size: 32px;
+  color: #f9943f;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.intro__title {
+  /* FONT MỚI: Thanh mảnh hơn */
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 100px;
+  color: #212529;
+  text-transform: uppercase;
+  font-weight: 600; 
+  line-height: 1;
+}
+
+.intro__content p {
+  font-size: 24px;
+  color: #212529;
+}
+
+/* Sections */
+.section-padding-80-0 {
+  padding: 80px 0 0;
+}
+
+.section-padding-80-50 {
+  padding: 80px 0 50px;
+}
+
+.section-padding-100 {
+  padding: 100px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* CẬP NHẬT: Tiêu đề Games */
+.section-heading h3 {
+  /* Đổi font chữ và màu sắc để nổi bật hơn */
+  font-family: 'Oswald', sans-serif; 
+  font-size: 3.5rem; /* Tăng kích thước */
+  text-transform: uppercase;
+  color: #212529; /* Màu Đen */
+  font-weight: 500;
+}
+
+.section-heading h3 span {
+  color: #212529; /* Giữ màu Đen */
+  font-weight: 700;
+}
+
+/* --- PRODUCT SECTION STYLES (KHÔI PHỤC) --- */
+
+.about-content-text h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.product-title {
+  /* FONT MỚI: Thanh mảnh hơn */
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 40px; 
+  font-weight: 600;
+  color: #ffffff; /* Giữ màu trắng cho nền cam */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.product-title span {
+  color: #ffffff; /* Giữ màu trắng */
+}
+
+.product-desc {
+  color: #ffffff; /* Giữ màu trắng */
+  font-weight: 400; 
+  font-size: 1.7rem; 
+  margin-bottom: 30px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.product-row .col-12.col-md-6 {
+  /* KHÔI PHỤC MARGIN/PADDING BAN ĐẦU */
+  margin-bottom: 70px; 
+  padding: 0 5px; 
+}
+
+.mb-200 {
+  margin-bottom: 100px !important; 
+}
+
+/* --- END PRODUCT SECTION STYLES --- */
+
+.about-content-text h3 {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.about-content-text h3 span {
+  color: #f9943f;
+}
+
+/* CẬP NHẬT: Tăng cỡ chữ cho phần About */
+.about-content-text p {
+  margin-bottom: 30px;
+}
+.about-content-text p.about-text-large {
+    font-size: 1.5rem; /* Tăng cỡ chữ */
+    line-height: 1.8;
+}
+
+/* Nút Chung (FINAL: Màu Đen, Anim trượt Vàng Cam Sáng) */
+.btn.confer-btn {
+  padding: 12px 30px;
+  min-width: 230px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 999px;
+  
+  /* CẬP NHẬT: Màu nền mặc định: Đen */
+  background-color: #212529; 
+  box-shadow: none; 
+  color: #ffffff; /* Màu chữ mặc định: Trắng */
+  
+  /* Transition cho shadow và transform */
+  transition: all 0.3s ease-in-out; 
+  position: relative; 
+  overflow: hidden; /* Cần thiết cho kỹ thuật scaleX (fading) */
+  z-index: 1; 
+  border: 2px solid transparent; 
+}
+
+/* HIỆU ỨNG KHI HOVER: Đảm bảo màu chữ và shadow */
+.btn.confer-btn:hover {
+  /* Màu nền của nút không đổi, chỉ màu trượt ::before thay đổi */
+  color: #212529; /* CẬP NHẬT: Màu chữ chuyển sang Đen để tương phản với màu Vàng Cam Sáng */
+  
+  /* Thêm shadow và transform */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); 
+}
+
+/* Pseudo-element cho hiệu ứng trượt (Vàng Cam Sáng) */
+.btn.confer-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  
+  /* CẬP NHẬT: Màu trượt vào khi hover: Vàng Cam Sáng */
+  background-color: #ffc107; 
+  z-index: -1; 
+  
+  /* SỬ DỤNG SCALEX CHO HIỆU ỨNG FADING MÀU */
+  transform: scaleX(0); /* Bắt đầu: Ẩn (scale ngang 0) */
+  transform-origin: left; /* Đặt gốc transform về bên trái */
+  transition: transform 0.3s ease-in-out; 
+  
+  border-radius: 999px; 
+}
+
+/* HIỆU ỨNG PHỦ KÍN KHI HOVER */
+.btn.confer-btn:hover::before {
+  /* Khi hover, Vàng Cam Sáng scaleX(1) để phủ kín nút */
+  transform: scaleX(1); 
+}
+
+
+.btn.confer-btn.btn-store {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.confer-btn.btn-store i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+.about-thumb img {
+  width: 100%; 
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+#contact form .form-control {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Footer */
+.footer-area {
+  padding: 40px 0;
+  background: #f1f1f1;
+  text-align: center;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro__title {
+    font-size: 60px;
+  }
+  .about-content-text h1, .product-title {
+    font-size: 24px;
+  }
+  .product-desc {
+    font-size: 1.5rem; 
+  }
+  .intro {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  .section-heading h3 {
+    font-size: 2.5rem;
+  }
+  .classynav ul li a {
+    margin: 0 10px;
+  }
+  .product-row .col-12.col-md-6 {
+    margin-bottom: 50px; /* Khôi phục margin cho mobile */
+    padding: 0 15px; 
+  }
+  .classy-navbar {
+    margin-left: 0;
+  }
+  /* Điều chỉnh kích thước nút cho responsive */
+  .btn.confer-btn {
+    min-width: unset;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  /* CẬP NHẬT: Cỡ chữ About cho responsive */
+  .about-content-text p.about-text-large {
+    font-size: 1.2rem; 
+  }
+}

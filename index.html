@@ -1,11 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BanhmiStudio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Oswald:wght@200;300;500&family=Yanone+Kaffeesatz:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Chào mừng đến với trang của ThanhDong</h1>
-  <p>Đây là trang GitHub Pages đầu tiên của bạn.</p>
+
+  <header class="header-area">
+    <div class="classy-nav-container breakpoint-off">
+      <div class="container">
+        <nav class="classy-navbar align-items-center" id="conferNav">
+          <a class="nav-brand" href="index.html"><img src="images/logo.png" alt="BanhmiStudio Logo"></a>
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+          <div class="classy-menu">
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+            <div class="classynav">
+              <ul id="nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro bg_img">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="intro__content">
+            <span class="intro__sub-title">BanhmiStudio</span>
+            <h2 class="intro__title">THINK BIG <br>WORK SMART</h2>
+            <p>Our games entertain millions of people every day, everywhere</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="about-us-countdown-area section-padding-80-0" style="background-color: #f9943f;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-heading text-center mb-100">
+            <h3>Các trò chơi của <span>BanhmiStudio</span></h3>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row align-items-center product-row">
+        
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-content-text">
+            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> SIÊU TRÍ TUỆ</h1>
+            <p class="product-desc">Trải nghiệm game trí tuệ cực thú vị với nhiều thử thách hack não.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotIQMystery" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-thumb">
+            <img src="images/italian_brainrot_iq.jpg" alt="Italian Brainrot IQ">
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-thumb">
+            <img src="images/italian_brainrot_escape.jpg" alt="Italian Brainrot Escape">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-content-text">
+            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> ESCAPE ROOM</h1>
+            <p class="product-desc">Giải đố và thoát khỏi các căn phòng đầy thử thách.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotEscapeRoom" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-content-text">
+            <h1 class="product-title"><span>TAP </span>FELLAS</h1>
+            <p class="product-desc">Game phản xạ vui nhộn, thử thách tốc độ và sự chính xác.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.TapFellas" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 px-5 mb-200">
+          <div class="about-thumb">
+            <img src="images/tap_fellas.jpg" alt="Tap Fellas">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-us-countdown-area section-padding-80-50">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="about-content-text mb-80">
+            <h3>About <span>BanhmiStudio</span></h3>
+            <p class="about-text-large">BanhmiStudio là nhà phát triển game độc lập, tâm huyết với sứ mệnh “Think big, Work smart”. Chúng tôi phát triển những game trí tuệ và giải đố, mang lại trải nghiệm sâu sắc và thú vị cho hàng triệu người chơi mỗi ngày, khắp nơi trên thế giới.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="about-thumb mb-80">
+            <img src="images/about-placeholder.png" alt="about">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="our-schedule-area section-padding-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-heading-2 text-center">
+            <h3>Liên Hệ <span>Chúng Tôi</span></h3>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+          <form>
+            <input type="text" class="form-control" placeholder="Họ và tên" required />
+            <input type="email" class="form-control" placeholder="Email" required />
+            <textarea class="form-control" placeholder="Nội dung" rows="5" required></textarea>
+            <button type="submit" class="btn confer-btn">Gửi</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>© 2025 BanhmiStudio | Email: binshincute.2001@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
