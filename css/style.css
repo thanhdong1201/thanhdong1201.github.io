@@ -12,38 +12,95 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* --- 1. HEADER & NAVIGATION ENHANCEMENTS --- */
 .header-area {
   background: #f9943f;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed; /* Làm cho header cố định */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease; /* Transition cho hiệu ứng shrink */
 }
 
 .classy-navbar {
   padding: 15px 0; 
   display: flex;
   align-items: center;
+  /* Đã thay đổi: Bắt đầu từ bên trái */
   justify-content: flex-start;
   margin-left: 50px; 
+  margin-right: 50px; /* Thêm margin phải để cân đối */
+  transition: padding 0.3s ease;
+}
+
+/* ĐÃ CHỈNH SỬA: Loại bỏ độ trong suốt (opacity) */
+.header-area.header-shrink {
+  padding: 5px 0; /* Giảm padding */
+  background: #f9943f; /* Giữ màu cam đặc hoàn toàn (không trong suốt) */
 }
 
 .nav-brand img {
   width: 75px;
+  transition: all 0.3s ease;
+}
+
+/* Style cho nút chuyển đổi ngôn ngữ */
+.language-switcher-container {
+    /* Đã di chuyển ra cuối HTML, không cần margin: auto nữa */
+    margin-left: 20px;
+}
+
+.lang-switcher-btn {
+    background: #212529;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.lang-switcher-btn:hover {
+    background: #ffffff;
+    color: #212529;
+    border: 2px solid #212529;
+}
+
+
+/* Logo Wiggle Effect */
+.nav-brand img.logo-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-5deg) scale(1.05); }
+  50% { transform: rotate(5deg) scale(1.05); }
+  75% { transform: rotate(-3deg) scale(1.03); }
 }
 
 /* Căn chỉnh Nav Items */
 .classy-menu {
+  /* Dùng flex-grow để menu chiếm hết không gian còn lại */
   flex-grow: 1; 
   margin-top: 10px;
 }
 
 .classynav {
-  text-align: center;
+  /* Căn chỉnh menu về phía bên phải để sát với nút ngôn ngữ */
+  text-align: right; 
 }
 
 .classynav ul {
   list-style: none; 
   margin: 0;
   padding: 0;
+  /* Dùng flex để dễ căn chỉnh hơn */
+  display: flex;
+  justify-content: flex-end; /* Đẩy các item sang phải */
 }
 
 .classynav ul li {
@@ -57,15 +114,34 @@ body {
   font-size: 1.5rem;
   transition: color 0.3s;
   margin: 0 15px;
+  position: relative; /* Cần cho hiệu ứng underline */
+}
+
+/* Hiệu ứng Menu Underline Slide */
+.classynav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* Bắt đầu từ giữa */
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #212529; /* Màu Đen */
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
 .classynav ul li a:hover {
   color: #212529; 
 }
 
+.classynav ul li a:hover::after {
+  width: 100%; /* Kéo dài ra 100% */
+}
+/* --- END HEADER ENHANCEMENTS --- */
+
 /* Intro */
 .intro {
-  padding-top: 100px;
+  padding-top: 150px; /* Tăng padding để bù lại fixed header */
   padding-bottom: 150px;
   position: relative;
 }
@@ -79,7 +155,6 @@ body {
 }
 
 .intro__title {
-  /* FONT MỚI: Thanh mảnh hơn */
   font-family: 'Alumni Sans', sans-serif;
   font-size: 100px;
   color: #212529;
@@ -111,22 +186,26 @@ body {
   margin-bottom: 60px;
 }
 
-/* CẬP NHẬT: Tiêu đề Games */
 .section-heading h3 {
-  /* Đổi font chữ và màu sắc để nổi bật hơn */
   font-family: 'Oswald', sans-serif; 
-  font-size: 3.5rem; /* Tăng kích thước */
+  font-size: 3.5rem; 
   text-transform: uppercase;
-  color: #212529; /* Màu Đen */
+  color: #212529; 
   font-weight: 500;
 }
 
 .section-heading h3 span {
-  color: #212529; /* Giữ màu Đen */
+  /* GIỮ NGUYÊN font-weight: 700 như file cũ, chỉ bỏ in đậm cho phần còn lại của tiêu đề */
+  color: #212529; 
   font-weight: 700;
 }
 
-/* --- PRODUCT SECTION STYLES (KHÔI PHỤC) --- */
+/* --- 2. PRODUCT SECTION ENHANCEMENTS --- */
+
+.product-row .product-card {
+    /* Thêm transition cho product card để chuẩn bị cho hiệu ứng hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 .about-content-text h1 {
   font-size: 60px;
@@ -136,30 +215,37 @@ body {
 }
 
 .product-title {
-  /* FONT MỚI: Thanh mảnh hơn */
   font-family: 'Alumni Sans', sans-serif;
   font-size: 40px; 
   font-weight: 600;
-  color: #ffffff; /* Giữ màu trắng cho nền cam */
+  color: #ffffff; 
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .product-title span {
-  color: #ffffff; /* Giữ màu trắng */
+  color: #ffffff; 
+  transition: text-shadow 0.3s ease; /* Thêm transition cho hiệu ứng glow */
 }
 
+/* Hiệu ứng Text Shadow/Glow khi hover vào Product Card */
+.product-card:hover .product-title span {
+    text-shadow: 0 0 8px #ffc107, 0 0 10px rgba(255, 193, 7, 0.7); 
+}
+
+/* CẬP NHẬT: Áp dụng Segoe UI, 15px */
 .product-desc {
-  color: #ffffff; /* Giữ màu trắng */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff; 
   font-weight: 400; 
-  font-size: 1.7rem; 
+  font-size: 15px; /* SỬA LẠI THÀNH 15px */
+  line-height: 1.8; /* Tăng line-height cho dễ đọc */
   margin-bottom: 30px;
   white-space: normal;
   word-wrap: break-word;
 }
 
 .product-row .col-12.col-md-6 {
-  /* KHÔI PHỤC MARGIN/PADDING BAN ĐẦU */
   margin-bottom: 70px; 
   padding: 0 5px; 
 }
@@ -168,7 +254,26 @@ body {
   margin-bottom: 100px !important; 
 }
 
-/* --- END PRODUCT SECTION STYLES --- */
+.about-thumb {
+  overflow: hidden; /* Quan trọng để cắt phần zoom */
+  border-radius: 8px;
+}
+
+.about-thumb img {
+  width: 100%; 
+  border-radius: 8px;
+  /* Thêm transition cho hiệu ứng zoom và shadow */
+  transition: all 0.4s ease-in-out; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
+
+/* Hiệu ứng Image Zoom & Shadow khi hover vào Product Card */
+.product-card:hover .about-thumb img {
+  transform: scale(1.05); /* Zoom ảnh 5% */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5); /* Shadow sâu hơn */
+}
+
+/* --- END PRODUCT ENHANCEMENTS --- */
 
 .about-content-text h3 {
   font-family: 'Alumni Sans', sans-serif;
@@ -180,12 +285,15 @@ body {
   color: #f9943f;
 }
 
-/* CẬP NHẬT: Tăng cỡ chữ cho phần About */
 .about-content-text p {
   margin-bottom: 30px;
 }
+
+/* CẬP NHẬT: Áp dụng Segoe UI, 15px */
 .about-content-text p.about-text-large {
-    font-size: 1.5rem; /* Tăng cỡ chữ */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px; /* SỬA LẠI THÀNH 15px */
+    font-weight: 400;
     line-height: 1.8;
 }
 
@@ -199,30 +307,23 @@ body {
   text-transform: uppercase;
   border-radius: 999px;
   
-  /* CẬP NHẬT: Màu nền mặc định: Đen */
   background-color: #212529; 
   box-shadow: none; 
-  color: #ffffff; /* Màu chữ mặc định: Trắng */
+  color: #ffffff; 
   
-  /* Transition cho shadow và transform */
   transition: all 0.3s ease-in-out; 
   position: relative; 
-  overflow: hidden; /* Cần thiết cho kỹ thuật scaleX (fading) */
+  overflow: hidden; 
   z-index: 1; 
   border: 2px solid transparent; 
 }
 
-/* HIỆU ỨNG KHI HOVER: Đảm bảo màu chữ và shadow */
 .btn.confer-btn:hover {
-  /* Màu nền của nút không đổi, chỉ màu trượt ::before thay đổi */
-  color: #212529; /* CẬP NHẬT: Màu chữ chuyển sang Đen để tương phản với màu Vàng Cam Sáng */
-  
-  /* Thêm shadow và transform */
+  color: #212529; 
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px); 
 }
 
-/* Pseudo-element cho hiệu ứng trượt (Vàng Cam Sáng) */
 .btn.confer-btn::before {
   content: '';
   position: absolute;
@@ -231,24 +332,19 @@ body {
   width: 100%; 
   height: 100%;
   
-  /* CẬP NHẬT: Màu trượt vào khi hover: Vàng Cam Sáng */
   background-color: #ffc107; 
   z-index: -1; 
   
-  /* SỬ DỤNG SCALEX CHO HIỆU ỨNG FADING MÀU */
-  transform: scaleX(0); /* Bắt đầu: Ẩn (scale ngang 0) */
-  transform-origin: left; /* Đặt gốc transform về bên trái */
+  transform: scaleX(0); 
+  transform-origin: left; 
   transition: transform 0.3s ease-in-out; 
   
   border-radius: 999px; 
 }
 
-/* HIỆU ỨNG PHỦ KÍN KHI HOVER */
 .btn.confer-btn:hover::before {
-  /* Khi hover, Vàng Cam Sáng scaleX(1) để phủ kín nút */
   transform: scaleX(1); 
 }
-
 
 .btn.confer-btn.btn-store {
     display: inline-flex; 
@@ -260,19 +356,49 @@ body {
     font-size: 1.2rem;
     margin-right: 8px;
     line-height: 1;
+    transition: transform 0.3s ease; /* Transition cho icon */
+}
+
+/* Hiệu ứng icon xoay khi hover */
+.btn.confer-btn.btn-store:hover i {
+    transform: rotate(360deg);
+}
+
+/* Hiệu ứng Pulse nhẹ cho nút Store khi tải trang */
+.btn.confer-btn.btn-store {
+    animation: pulse 2s infinite ease-in-out 1s; /* Bắt đầu sau 1s, lặp lại */
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
 }
 
 .about-thumb img {
   width: 100%; 
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  /* Đã được định nghĩa lại ở trên */
 }
 
-/* Contact */
+/* --- 3. CONTACT FORM ENHANCEMENTS --- */
 #contact form .form-control {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng Focus Glow cho Input */
+#contact form .contact-input:focus {
+    outline: none; /* Bỏ outline mặc định */
+    border-color: #f9943f; /* Đổi màu viền sang Vàng Cam */
+    box-shadow: 0 0 8px rgba(249, 148, 63, 0.6); /* Thêm hiệu ứng glow */
 }
 
 /* Footer */
@@ -285,18 +411,21 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .intro {
+      padding-top: 120px; /* Điều chỉnh padding cho header mobile */
+  }
+  .header-area.header-shrink {
+      padding: 0; 
+  }
   .intro__title {
     font-size: 60px;
   }
   .about-content-text h1, .product-title {
     font-size: 24px;
   }
+  /* Giữ nguyên 15px trên mobile */
   .product-desc {
-    font-size: 1.5rem; 
-  }
-  .intro {
-    padding-top: 80px;
-    padding-bottom: 100px;
+    font-size: 15px; 
   }
   .section-heading h3 {
     font-size: 2.5rem;
@@ -305,11 +434,12 @@ body {
     margin: 0 10px;
   }
   .product-row .col-12.col-md-6 {
-    margin-bottom: 50px; /* Khôi phục margin cho mobile */
+    margin-bottom: 50px; 
     padding: 0 15px; 
   }
   .classy-navbar {
     margin-left: 0;
+    margin-right: 0;
   }
   /* Điều chỉnh kích thước nút cho responsive */
   .btn.confer-btn {
@@ -317,8 +447,8 @@ body {
     padding: 10px 20px;
     font-size: 18px;
   }
-  /* CẬP NHẬT: Cỡ chữ About cho responsive */
+  /* Giữ nguyên 15px trên mobile */
   .about-content-text p.about-text-large {
-    font-size: 1.2rem; 
+    font-size: 15px; 
   }
 }

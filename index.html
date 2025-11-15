@@ -3,38 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BanhmiStudio</title>
+  <title data-key="page_title">BanhmiStudio</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Oswald:wght@200;300;500&family=Yanone+Kaffeesatz:wght@200;400&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600&family=Oswald:wght@500&family=Yanone+Kaffeesatz:wght@400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-lang="vi"> 
 
-  <header class="header-area">
+  <header class="header-area sticky-header">
     <div class="classy-nav-container breakpoint-off">
       <div class="container">
         <nav class="classy-navbar align-items-center" id="conferNav">
           <a class="nav-brand" href="index.html"><img src="images/logo.png" alt="BanhmiStudio Logo"></a>
+          
           <div class="classy-navbar-toggler">
             <span class="navbarToggler"><span></span><span></span><span></span></span>
           </div>
+          
           <div class="classy-menu">
             <div class="classycloseIcon">
               <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
             </div>
             <div class="classynav">
               <ul id="nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#products">PRODUCTS</a></li>
-                <li><a href="#about">ABOUT US</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">CAREERS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="index.html" class="translatable" data-key="nav_home">TRANG CHỦ</a></li>
+                <li><a href="#products" class="translatable" data-key="nav_products">SẢN PHẨM</a></li>
+                <li><a href="#about" class="translatable" data-key="nav_about">VỀ CHÚNG TÔI</a></li>
+                <li><a href="#" class="translatable" data-key="nav_news">TIN TỨC</a></li>
+                <li><a href="#" class="translatable" data-key="nav_careers">TUYỂN DỤNG</a></li>
+                <li><a href="#contact" class="translatable" data-key="nav_contact">LIÊN HỆ</a></li>
               </ul>
             </div>
           </div>
-        </nav>
+          
+          <div class="language-switcher-container">
+            <button id="lang-switcher" class="lang-switcher-btn" data-current-lang="vi">EN/VI</button>
+          </div>
+          </nav>
       </div>
     </div>
   </header>
@@ -44,9 +51,9 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="intro__content">
-            <span class="intro__sub-title">BanhmiStudio</span>
-            <h2 class="intro__title">THINK BIG <br>WORK SMART</h2>
-            <p>Our games entertain millions of people every day, everywhere</p>
+            <span class="intro__sub-title translatable" data-key="studio_name">BanhmiStudio</span>
+            <h2 class="intro__title translatable" data-key="slogan">NGHĨ LỚN <br>LÀM VIỆC THÔNG MINH</h2>
+            <p class="translatable" data-key="slogan_desc">Các trò chơi của chúng tôi giải trí cho hàng triệu người mỗi ngày, ở mọi nơi</p>
           </div>
         </div>
       </div>
@@ -58,47 +65,47 @@
       <div class="row">
         <div class="col-12">
           <div class="section-heading text-center mb-100">
-            <h3>Các trò chơi của <span>BanhmiStudio</span></h3>
+            <h3 class="translatable" data-key="product_section_title">Các trò chơi của <span>BanhmiStudio</span></h3>
           </div>
         </div>
       </div>
       
       <div class="row align-items-center product-row">
         
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-content-text">
-            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> SIÊU TRÍ TUỆ</h1>
-            <p class="product-desc">Trải nghiệm game trí tuệ cực thú vị với nhiều thử thách hack não.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotIQMystery" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> <span class="product-suffix translatable" data-key="game1_suffix">SIÊU TRÍ TUỆ</span></h1>
+            <p class="product-desc translatable" data-key="game1_desc">Trải nghiệm game trí tuệ cực thú vị với nhiều thử thách hack não.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotIQMystery" target="_blank" class="btn confer-btn mt-50 btn-store translatable" data-key="btn_download"><i class="zmdi zmdi-android"></i> Tải về</a>
           </div>
         </div>
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-thumb">
             <img src="images/italian_brainrot_iq.jpg" alt="Italian Brainrot IQ">
           </div>
         </div>
         
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-thumb">
             <img src="images/italian_brainrot_escape.jpg" alt="Italian Brainrot Escape">
           </div>
         </div>
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-content-text">
-            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> ESCAPE ROOM</h1>
-            <p class="product-desc">Giải đố và thoát khỏi các căn phòng đầy thử thách.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotEscapeRoom" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+            <h1 class="product-title"><span>ITALIAN BRAINROT:</span> <span class="product-suffix translatable" data-key="game2_suffix">THOÁT HIỂM</span></h1>
+            <p class="product-desc translatable" data-key="game2_desc">Giải đố và thoát khỏi các căn phòng đầy thử thách.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.ItalianBrainrotEscapeRoom" target="_blank" class="btn confer-btn mt-50 btn-store translatable" data-key="btn_download"><i class="zmdi zmdi-android"></i> Tải về</a>
           </div>
         </div>
 
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-content-text">
             <h1 class="product-title"><span>TAP </span>FELLAS</h1>
-            <p class="product-desc">Game phản xạ vui nhộn, thử thách tốc độ và sự chính xác.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.TapFellas" target="_blank" class="btn confer-btn mt-50 btn-store"><i class="zmdi zmdi-android"></i> Google Play</a>
+            <p class="product-desc translatable" data-key="game3_desc">Game phản xạ vui nhộn, thử thách tốc độ và sự chính xác.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.BanhmiStudio.TapFellas" target="_blank" class="btn confer-btn mt-50 btn-store translatable" data-key="btn_download"><i class="zmdi zmdi-android"></i> Tải về</a>
           </div>
         </div>
-        <div class="col-12 col-md-6 px-5 mb-200">
+        <div class="col-12 col-md-6 px-5 mb-200 product-card">
           <div class="about-thumb">
             <img src="images/tap_fellas.jpg" alt="Tap Fellas">
           </div>
@@ -113,8 +120,8 @@
       <div class="row align-items-center">
         <div class="col-12 col-md-6">
           <div class="about-content-text mb-80">
-            <h3>About <span>BanhmiStudio</span></h3>
-            <p class="about-text-large">BanhmiStudio là nhà phát triển game độc lập, tâm huyết với sứ mệnh “Think big, Work smart”. Chúng tôi phát triển những game trí tuệ và giải đố, mang lại trải nghiệm sâu sắc và thú vị cho hàng triệu người chơi mỗi ngày, khắp nơi trên thế giới.</p>
+            <h3 class="translatable" data-key="about_section_title">Về <span>BanhmiStudio</span></h3>
+            <p class="about-text-large translatable" data-key="about_desc">BanhmiStudio là nhà phát triển game độc lập, tâm huyết với sứ mệnh “Nghĩ lớn, Làm việc thông minh”. Chúng tôi phát triển những game trí tuệ và giải đố, mang lại trải nghiệm sâu sắc và thú vị cho hàng triệu người chơi mỗi ngày, khắp nơi trên thế giới.</p>
           </div>
         </div>
         <div class="col-12 col-md-6">
@@ -131,17 +138,17 @@
       <div class="row">
         <div class="col-12">
           <div class="section-heading-2 text-center">
-            <h3>Liên Hệ <span>Chúng Tôi</span></h3>
+            <h3 class="translatable" data-key="contact_section_title">Liên Hệ <span>Chúng Tôi</span></h3>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-12 col-md-8">
           <form>
-            <input type="text" class="form-control" placeholder="Họ và tên" required />
-            <input type="email" class="form-control" placeholder="Email" required />
-            <textarea class="form-control" placeholder="Nội dung" rows="5" required></textarea>
-            <button type="submit" class="btn confer-btn">Gửi</button>
+            <input type="text" class="form-control contact-input" placeholder="Họ và tên" data-key-placeholder="contact_name" required />
+            <input type="email" class="form-control contact-input" placeholder="Email" data-key-placeholder="contact_email" required />
+            <textarea class="form-control contact-input" placeholder="Nội dung" rows="5" data-key-placeholder="contact_message" required></textarea>
+            <button type="submit" class="btn confer-btn translatable" data-key="btn_send">Gửi</button>
           </form>
         </div>
       </div>
@@ -157,6 +164,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/language.js"></script> 
 
 </body>
 </html>
