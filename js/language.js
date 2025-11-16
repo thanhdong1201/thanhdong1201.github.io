@@ -19,7 +19,7 @@ const translations = {
         // (phần game descriptions bạn đã sửa trước đó giữ nguyên)
 
         'game1_suffix': 'IQ MYSTERY',
-        'game1_desc': 'Step into a colorful AI-generated world inspired by viral memes! Solve tricky puzzles with humorous hints and bizarre characters in this fun, family-friendly AI quiz challenge.',
+        'game1_desc': 'Step into a colorful AI-generated world inspired by viral memes! Solve tricky puzzles with funny hints and quirky characters in this family-friendly AI quiz.',
 
         'game2_suffix': 'ESCAPE ROOM',
         'game2_desc': 'You’ve been kidnapped by Tung Tung Tung Sahur! Navigate a trap-filled maze, avoid detection, and rescue other Italian Brainrot characters trapped inside.',
@@ -37,6 +37,8 @@ const translations = {
         'contact_email': 'Email',
         'contact_message': 'Message',
         'btn_download': 'Download',
+        // --- BỔ SUNG KEY DỊCH MỚI ---
+        'btn_policy': 'Privacy Policy', 
         'btn_send': 'Send'
     },
 
@@ -76,6 +78,8 @@ const translations = {
         'contact_email': 'Email',
         'contact_message': 'Nội dung',
         'btn_download': 'Tải về',
+        // --- BỔ SUNG KEY DỊCH MỚI ---
+        'btn_policy': 'Chính sách Bảo mật', 
         'btn_send': 'Gửi'
     }
 };

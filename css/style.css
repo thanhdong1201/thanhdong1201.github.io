@@ -38,8 +38,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 50px; 
-  margin-right: 50px; 
+  margin-left: 0px; 
+  margin-right: 0px; 
   transition: padding 0.3s ease;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .nav-brand img {
-  width: 75px;
+  width: 50px;
   transition: all 0.3s ease;
 }
 
@@ -237,11 +237,17 @@ body {
   color: #ffffff; 
   text-transform: uppercase;
   margin-bottom: 20px;
+  /* Bắt buộc tiêu đề nằm trên một dòng, ưu tiên không xuống dòng */
+  white-space: nowrap; 
+  /* Đảm bảo chiếm đủ không gian cần thiết */
+  min-width: 100%;
 }
 
 .product-title span {
   color: #ffffff; 
   transition: text-shadow 0.3s ease; 
+  /* Đảm bảo các thành phần trong tiêu đề không bị tách ra */
+  display: inline;
 }
 
 .product-desc {
@@ -515,8 +521,11 @@ body {
   .intro__title {
     font-size: 60px;
   }
+  /* CẬP NHẬT TRÊN MOBILE */
   .about-content-text h1, .product-title {
-    font-size: 24px;
+    font-size: 30px;
+    /* Cho phép tiêu đề xuống dòng trên mobile để tránh tràn màn hình */
+    white-space: normal; 
   }
   .product-desc {
     font-size: 15px; 
