@@ -40,7 +40,7 @@ const translations = {
         'product_section_title': 'Các trò chơi của <span>BanhmiStudio</span>',
         'game1_suffix': 'SIÊU TRÍ TUỆ',
         'game1_desc': 'Trải nghiệm game trí tuệ cực thú vị với nhiều thử thách hack não.',
-        'game2_suffix': 'THOÁT HIỂM',
+        'game2_suffix': 'PHÒNG THOÁT HIỂM',
         'game2_desc': 'Giải đố và thoát khỏi các căn phòng đầy thử thách.',
         'game3_desc': 'Game phản xạ vui nhộn, thử thách tốc độ và sự chính xác.',
         'about_section_title': 'Về <span>BanhmiStudio</span>',

@@ -7,7 +7,8 @@
 
 /* Body */
 body {
-  font-family: 'Yanone Kaffeesatz', 'Oswald', 'Alumni Sans', sans-serif;
+  /* ĐÃ SỬA: Loại bỏ 'Yanone Kaffeesatz' và 'Oswald'. Sử dụng 'Alumni Sans' làm font chính. */
+  font-family: 'Alumni Sans', sans-serif; 
   color: #212529;
   line-height: 1.6;
 }
@@ -159,7 +160,7 @@ body {
   font-size: 100px;
   color: #212529;
   text-transform: uppercase;
-  font-weight: 600; 
+  font-weight: 600; /* GIỮ NGUYÊN 600 */
   line-height: 1;
 }
 
@@ -178,7 +179,7 @@ body {
 }
 
 .section-padding-100 {
-  padding: 100px 0;
+  padding: 0px 0;
 }
 
 .section-heading {
@@ -187,22 +188,27 @@ body {
 }
 
 .section-heading h3 {
-  font-family: 'Oswald', sans-serif; 
+  /* ĐÃ SỬA: Thay 'Oswald' bằng 'Alumni Sans' */
+  font-family: 'Alumni Sans', sans-serif; 
   font-size: 3.5rem; 
   text-transform: uppercase;
-  color: #212529; 
-  font-weight: 500;
+  color: rgb(0, 0, 0); 
+  font-weight: 200;
 }
 
 .section-heading h3 span {
   /* GIỮ NGUYÊN font-weight: 700 như file cũ, chỉ bỏ in đậm cho phần còn lại của tiêu đề */
-  color: #212529; 
-  font-weight: 700;
+  color: #ffffff; 
+  font-size: 3.5rem;
+  font-weight: 200;
 }
 
 /* --- 2. PRODUCT SECTION ENHANCEMENTS --- */
 
 .product-row .product-card {
+    /* Đã giảm padding trong card để tăng không gian cho text */
+    padding-left: 0.5rem !important; 
+    padding-right: 0.5rem !important; 
     /* Thêm transition cho product card để chuẩn bị cho hiệu ứng hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -217,7 +223,7 @@ body {
 .product-title {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 40px; 
-  font-weight: 600;
+  font-weight: 600; /* Đã đồng nhất font-weight 600 */
   color: #ffffff; 
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -238,7 +244,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff; 
   font-weight: 400; 
-  font-size: 15px; /* SỬA LẠI THÀNH 15px */
+  font-size: 18px; /* SỬA LẠI THÀNH 15px */
   line-height: 1.8; /* Tăng line-height cho dễ đọc */
   margin-bottom: 30px;
   white-space: normal;
@@ -247,7 +253,9 @@ body {
 
 .product-row .col-12.col-md-6 {
   margin-bottom: 70px; 
-  padding: 0 5px; 
+  /* GIỮ NGUYÊN: Ghi đè class px-5 trên cột bằng padding nhỏ hơn (1rem) */
+  padding-left: 1rem !important; 
+  padding-right: 1rem !important; 
 }
 
 .mb-200 {
@@ -278,7 +286,7 @@ body {
 .about-content-text h3 {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 600; /* GIỮ NGUYÊN 600 (Tiêu đề mẫu) */
 }
 
 .about-content-text h3 span {
@@ -292,7 +300,7 @@ body {
 /* CẬP NHẬT: Áp dụng Segoe UI, 15px */
 .about-content-text p.about-text-large {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px; /* SỬA LẠI THÀNH 15px */
+    font-size: 18px; /* SỬA LẠI THÀNH 15px */
     font-weight: 400;
     line-height: 1.8;
 }
@@ -435,7 +443,8 @@ body {
   }
   .product-row .col-12.col-md-6 {
     margin-bottom: 50px; 
-    padding: 0 15px; 
+    /* Đảm bảo padding mobile vẫn ổn */
+    padding: 0 15px !important; 
   }
   .classy-navbar {
     margin-left: 0;
