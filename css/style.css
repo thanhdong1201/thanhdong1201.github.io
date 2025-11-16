@@ -5,9 +5,16 @@
   box-sizing: border-box;
 }
 
+/* Biến CSS: Quản lý màu gradient cam bóng mới */
+:root {
+  /* Màu cam gradient chính (Bright Sunset) - Dùng cho Header, Product Section, Contact Section, Nút Policy & Submit */
+  --main-gradient: linear-gradient(145deg, #FFC371 0%, #FF5F6D 50%, #FFC371 100%); 
+  /* Màu cam gradient đậm hơn (Ruby Red Edge) - Dùng cho hiệu ứng hover/slide của nút Policy & Submit */
+  --hover-gradient: linear-gradient(120deg, #FA8072 0%, #E94057 100%);
+}
+
 /* Body */
 body {
-  /* ĐÃ SỬA: Loại bỏ 'Yanone Kaffeesatz' và 'Oswald'. Sử dụng 'Alumni Sans' làm font chính. */
   font-family: 'Alumni Sans', sans-serif; 
   color: #212529;
   line-height: 1.6;
@@ -15,31 +22,35 @@ body {
 
 /* --- 1. HEADER & NAVIGATION ENHANCEMENTS --- */
 .header-area {
-  background: #f9943f;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed; /* Làm cho header cố định */
+  /* SỬ DỤNG BIẾN CSS */
+  background: var(--main-gradient); 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4); 
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: padding 0.3s ease, background 0.3s ease; /* Transition cho hiệu ứng shrink */
+  transition: padding 0.3s ease, background 0.3s ease, height 0.3s ease; 
 }
 
 .classy-navbar {
   padding: 15px 0; 
   display: flex;
   align-items: center;
-  /* Đã thay đổi: Bắt đầu từ bên trái */
   justify-content: flex-start;
   margin-left: 50px; 
-  margin-right: 50px; /* Thêm margin phải để cân đối */
+  margin-right: 50px; 
   transition: padding 0.3s ease;
 }
 
-/* ĐÃ CHỈNH SỬA: Loại bỏ độ trong suốt (opacity) */
 .header-area.header-shrink {
-  padding: 5px 0; /* Giảm padding */
-  background: #f9943f; /* Giữ màu cam đặc hoàn toàn (không trong suốt) */
+  /* SỬ DỤNG BIẾN CSS */
+  background: var(--main-gradient); 
+  padding: 0; 
+}
+
+.header-area.header-shrink .classy-navbar {
+    padding: 5px 0; 
 }
 
 .nav-brand img {
@@ -47,9 +58,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Style cho nút chuyển đổi ngôn ngữ */
 .language-switcher-container {
-    /* Đã di chuyển ra cuối HTML, không cần margin: auto nữa */
     margin-left: 20px;
 }
 
@@ -85,13 +94,11 @@ body {
 
 /* Căn chỉnh Nav Items */
 .classy-menu {
-  /* Dùng flex-grow để menu chiếm hết không gian còn lại */
   flex-grow: 1; 
   margin-top: 10px;
 }
 
 .classynav {
-  /* Căn chỉnh menu về phía bên phải để sát với nút ngôn ngữ */
   text-align: right; 
 }
 
@@ -99,9 +106,8 @@ body {
   list-style: none; 
   margin: 0;
   padding: 0;
-  /* Dùng flex để dễ căn chỉnh hơn */
   display: flex;
-  justify-content: flex-end; /* Đẩy các item sang phải */
+  justify-content: flex-end; 
 }
 
 .classynav ul li {
@@ -115,18 +121,18 @@ body {
   font-size: 1.5rem;
   transition: color 0.3s;
   margin: 0 15px;
-  position: relative; /* Cần cho hiệu ứng underline */
+  position: relative; 
 }
 
 /* Hiệu ứng Menu Underline Slide */
 .classynav ul li a::after {
   content: '';
   position: absolute;
-  left: 50%; /* Bắt đầu từ giữa */
+  left: 50%; 
   bottom: -5px;
   width: 0;
   height: 3px;
-  background-color: #212529; /* Màu Đen */
+  background-color: #212529; 
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
@@ -136,14 +142,14 @@ body {
 }
 
 .classynav ul li a:hover::after {
-  width: 100%; /* Kéo dài ra 100% */
+  width: 100%; 
 }
 /* --- END HEADER ENHANCEMENTS --- */
 
 /* Intro */
 .intro {
-  padding-top: 150px; /* Tăng padding để bù lại fixed header */
-  padding-bottom: 150px;
+  padding-top: 150px; 
+  padding-bottom: 100px;
   position: relative;
 }
 
@@ -160,12 +166,13 @@ body {
   font-size: 100px;
   color: #212529;
   text-transform: uppercase;
-  font-weight: 600; /* GIỮ NGUYÊN 600 */
+  font-weight: 600; 
   line-height: 1;
 }
 
 .intro__content p {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700; 
   color: #212529;
 }
 
@@ -178,8 +185,8 @@ body {
   padding: 80px 0 50px;
 }
 
-.section-padding-100 {
-  padding: 0px 0;
+.our-schedule-area.section-padding-100 {
+  padding: 100px 0 100px; 
 }
 
 .section-heading {
@@ -188,28 +195,31 @@ body {
 }
 
 .section-heading h3 {
-  /* ĐÃ SỬA: Thay 'Oswald' bằng 'Alumni Sans' */
   font-family: 'Alumni Sans', sans-serif; 
   font-size: 3.5rem; 
   text-transform: uppercase;
   color: rgb(0, 0, 0); 
-  font-weight: 200;
+  font-weight: 100; 
 }
 
 .section-heading h3 span {
-  /* GIỮ NGUYÊN font-weight: 700 như file cũ, chỉ bỏ in đậm cho phần còn lại của tiêu đề */
   color: #ffffff; 
   font-size: 3.5rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 /* --- 2. PRODUCT SECTION ENHANCEMENTS --- */
 
+/* Nền gradient cam bóng cho Product section */
+#products {
+    /* SỬ DỤNG BIẾN CSS */
+    background: var(--main-gradient) !important; 
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
 .product-row .product-card {
-    /* Đã giảm padding trong card để tăng không gian cho text */
     padding-left: 0.5rem !important; 
     padding-right: 0.5rem !important; 
-    /* Thêm transition cho product card để chuẩn bị cho hiệu ứng hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -223,7 +233,7 @@ body {
 .product-title {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 40px; 
-  font-weight: 600; /* Đã đồng nhất font-weight 600 */
+  font-weight: 600; 
   color: #ffffff; 
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -231,21 +241,15 @@ body {
 
 .product-title span {
   color: #ffffff; 
-  transition: text-shadow 0.3s ease; /* Thêm transition cho hiệu ứng glow */
+  transition: text-shadow 0.3s ease; 
 }
 
-/* Hiệu ứng Text Shadow/Glow khi hover vào Product Card */
-.product-card:hover .product-title span {
-    text-shadow: 0 0 8px #ffc107, 0 0 10px rgba(255, 193, 7, 0.7); 
-}
-
-/* CẬP NHẬT: Áp dụng Segoe UI, 15px */
 .product-desc {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff; 
   font-weight: 400; 
-  font-size: 18px; /* SỬA LẠI THÀNH 15px */
-  line-height: 1.8; /* Tăng line-height cho dễ đọc */
+  font-size: 15px; 
+  line-height: 1.8; 
   margin-bottom: 30px;
   white-space: normal;
   word-wrap: break-word;
@@ -253,7 +257,6 @@ body {
 
 .product-row .col-12.col-md-6 {
   margin-bottom: 70px; 
-  /* GIỮ NGUYÊN: Ghi đè class px-5 trên cột bằng padding nhỏ hơn (1rem) */
   padding-left: 1rem !important; 
   padding-right: 1rem !important; 
 }
@@ -263,30 +266,34 @@ body {
 }
 
 .about-thumb {
-  overflow: hidden; /* Quan trọng để cắt phần zoom */
+  overflow: hidden; 
   border-radius: 8px;
 }
 
 .about-thumb img {
   width: 100%; 
   border-radius: 8px;
-  /* Thêm transition cho hiệu ứng zoom và shadow */
   transition: all 0.4s ease-in-out; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
 }
 
 /* Hiệu ứng Image Zoom & Shadow khi hover vào Product Card */
 .product-card:hover .about-thumb img {
-  transform: scale(1.05); /* Zoom ảnh 5% */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5); /* Shadow sâu hơn */
+  transform: scale(1.05); 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
 }
 
-/* --- END PRODUCT ENHANCEMENTS --- */
+/* Container cho 2 nút */
+.product-buttons {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
 
 .about-content-text h3 {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 3rem;
-  font-weight: 600; /* GIỮ NGUYÊN 600 (Tiêu đề mẫu) */
+  font-weight: 600; 
 }
 
 .about-content-text h3 span {
@@ -297,15 +304,16 @@ body {
   margin-bottom: 30px;
 }
 
-/* CẬP NHẬT: Áp dụng Segoe UI, 15px */
 .about-content-text p.about-text-large {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px; /* SỬA LẠI THÀNH 15px */
+    font-size: 15px; 
     font-weight: 400;
     line-height: 1.8;
 }
 
-/* Nút Chung (FINAL: Màu Đen, Anim trượt Vàng Cam Sáng) */
+/* ----------------------------------------------------------------------------------- */
+/* --- START NÚT BẤM CHUNG (CONFER-BTN) --- */
+/* ----------------------------------------------------------------------------------- */
 .btn.confer-btn {
   padding: 12px 30px;
   min-width: 230px;
@@ -314,24 +322,23 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 999px;
-  
-  background-color: #212529; 
-  box-shadow: none; 
   color: #ffffff; 
   
+  /* BASE SHARED STYLE: Transition, position, overflow for slide effect */
+  border: none; 
   transition: all 0.3s ease-in-out; 
   position: relative; 
   overflow: hidden; 
   z-index: 1; 
-  border: 2px solid transparent; 
+  transform: translateZ(0);
 }
 
+/* HIỆU ỨNG HOVER CHUNG: NÂNG LÊN */
 .btn.confer-btn:hover {
-  color: #212529; 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px); 
+  transform: translateY(-3px); 
 }
 
+/* LỚP PHỦ SLIDE (::before) - CHUẨN BỊ CHO HIỆU ỨNG MÀU */
 .btn.confer-btn::before {
   content: '';
   position: absolute;
@@ -340,7 +347,6 @@ body {
   width: 100%; 
   height: 100%;
   
-  background-color: #ffc107; 
   z-index: -1; 
   
   transform: scaleX(0); 
@@ -350,10 +356,99 @@ body {
   border-radius: 999px; 
 }
 
+/* HIỆU ỨNG SLIDE-IN CHUNG KHI HOVER */
 .btn.confer-btn:hover::before {
   transform: scaleX(1); 
 }
 
+/* ----------------------------------------------------------------------------------- */
+/* --- GOOGLE PLAY BUTTON (MÀU GỐC: GRADIENT XANH LÁ BÓNG - HIGHLIGHT: GRADIENT XANH LÁ NHẠT) --- */
+/* ----------------------------------------------------------------------------------- */
+.btn.confer-btn.btn-store {
+    /* MÀU GỐC: Gradient Xanh Lá BÓNG (áp dụng cấu trúc 145deg tương tự cam) */
+    background-image: linear-gradient(145deg, #A8E063 0%, #56AB2F 50%, #A8E063 100%); 
+    /* ĐỘ BÓNG CHUNG */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    background-color: transparent; 
+}
+
+.btn.confer-btn.btn-store:hover {
+    /* ĐỔ BÓNG NỔI BẬT: XANH LÁ */
+    box-shadow: 0 8px 20px 5px rgba(86, 171, 47, 0.7); 
+    color: #ffffff;
+}
+
+.btn.confer-btn.btn-store::before {
+    /* MÀU HIGHLIGHT: Gradient Xanh Lá Đậm (áp dụng cấu trúc 120deg tương tự hover cam) */
+    background-image: linear-gradient(120deg, #56AB2F 0%, #3B791B 100%);
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* --- PRIVACY POLICY BUTTON (MÀU GỐC: DÙNG BIẾN CHÍNH - HIGHLIGHT: DÙNG BIẾN HOVER) --- */
+/* ----------------------------------------------------------------------------------- */
+.btn.confer-btn.btn-policy {
+    /* MÀU GỐC: SỬ DỤNG BIẾN CSS CHÍNH */
+    background-image: var(--main-gradient);
+    /* ĐỘ BÓNG CHUNG */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn.confer-btn.btn-policy:hover {
+    /* ĐỔ BÓNG NỔI BẬT: CAM (THÔNG SỐ CHUNG) */
+    box-shadow: 0 8px 20px 5px rgba(249, 148, 63, 0.7);
+    color: #ffffff;
+}
+
+.btn.confer-btn.btn-policy::before {
+    /* MÀU HIGHLIGHT: SỬ DỤNG BIẾN HOVER */
+    background-image: var(--hover-gradient);
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* --- NÚT GỬI TRONG FORM LIÊN HỆ (Đơn giản hóa) --- */
+/* ----------------------------------------------------------------------------------- */
+.btn.confer-btn.btn-submit {
+    /* Xóa hiệu ứng trượt phức tạp */
+    position: static;
+    overflow: visible;
+    z-index: auto;
+
+    /* Style Đơn Giản: SỬ DỤNG BIẾN CSS CHÍNH */
+    background-image: var(--main-gradient); 
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Tăng độ bóng */
+    margin-top: 20px; 
+    transition: all 0.3s ease-in-out; 
+    min-width: 150px;
+    width: 100%; 
+    max-width: 200px; 
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.confer-btn.btn-submit::before {
+    content: none; /* Xóa lớp phủ trượt */
+}
+
+.btn.confer-btn.btn-submit:hover {
+    transform: translateY(-2px); 
+    /* ĐÃ SỬA: Dùng gradient cam đậm hơn khi hover */
+    background-image: var(--hover-gradient); /* SỬ DỤNG BIẾN HOVER */
+    background-color: transparent;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Tăng độ bóng */
+}
+
+/* Đảm bảo nút Gửi không bị ảnh hưởng bởi style chung cho nút có ::before */
+.btn.confer-btn.btn-submit:hover::before {
+    transform: scaleX(0); 
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+/* --- ICON STYLES --- */
+/* ----------------------------------------------------------------------------------- */
 .btn.confer-btn.btn-store {
     display: inline-flex; 
     align-items: center;
@@ -364,7 +459,7 @@ body {
     font-size: 1.2rem;
     margin-right: 8px;
     line-height: 1;
-    transition: transform 0.3s ease; /* Transition cho icon */
+    transition: transform 0.3s ease; 
 }
 
 /* Hiệu ứng icon xoay khi hover */
@@ -372,29 +467,21 @@ body {
     transform: rotate(360deg);
 }
 
-/* Hiệu ứng Pulse nhẹ cho nút Store khi tải trang */
-.btn.confer-btn.btn-store {
-    animation: pulse 2s infinite ease-in-out 1s; /* Bắt đầu sau 1s, lặp lại */
-}
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
-    }
-}
-
 .about-thumb img {
   width: 100%; 
   border-radius: 8px;
-  /* Đã được định nghĩa lại ở trên */
 }
 
 /* --- 3. CONTACT FORM ENHANCEMENTS --- */
+#contact {
+    /* Áp dụng gradient cam bóng - SỬ DỤNG BIẾN CSS */
+    background: var(--main-gradient);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cập nhật màu tiêu đề để nổi bật trên nền gradient */
+#contact .section-heading-2 h3 { color: #212529; } 
+
 #contact form .form-control {
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -404,9 +491,9 @@ body {
 
 /* Hiệu ứng Focus Glow cho Input */
 #contact form .contact-input:focus {
-    outline: none; /* Bỏ outline mặc định */
-    border-color: #f9943f; /* Đổi màu viền sang Vàng Cam */
-    box-shadow: 0 0 8px rgba(249, 148, 63, 0.6); /* Thêm hiệu ứng glow */
+    outline: none; 
+    border-color: #f9943f; 
+    box-shadow: 0 0 8px rgba(249, 148, 63, 0.6); 
 }
 
 /* Footer */
@@ -420,9 +507,9 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .intro {
-      padding-top: 120px; /* Điều chỉnh padding cho header mobile */
+      padding-top: 120px; 
   }
-  .header-area.header-shrink {
+  .header-area.header-shrink .classy-navbar {
       padding: 0; 
   }
   .intro__title {
@@ -431,7 +518,6 @@ body {
   .about-content-text h1, .product-title {
     font-size: 24px;
   }
-  /* Giữ nguyên 15px trên mobile */
   .product-desc {
     font-size: 15px; 
   }
@@ -443,20 +529,28 @@ body {
   }
   .product-row .col-12.col-md-6 {
     margin-bottom: 50px; 
-    /* Đảm bảo padding mobile vẫn ổn */
     padding: 0 15px !important; 
   }
   .classy-navbar {
     margin-left: 0;
     margin-right: 0;
   }
-  /* Điều chỉnh kích thước nút cho responsive */
   .btn.confer-btn {
     min-width: unset;
     padding: 10px 20px;
     font-size: 18px;
   }
-  /* Giữ nguyên 15px trên mobile */
+  .product-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn.confer-btn {
+      width: 100%; 
+      max-width: 250px;
+  }
+  .btn.confer-btn.btn-submit {
+      max-width: 100%; 
+  }
   .about-content-text p.about-text-large {
     font-size: 15px; 
   }
